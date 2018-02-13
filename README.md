@@ -12,6 +12,14 @@ Garbage collection works like this in DSGC: Every block of memory tracked by the
 
 The basic operation above doesn't help break _reference cycles_, however. When memory block A is dependent on memory block B and vice versa, you have a situation where nobody is referencing A or B, yet they still seem valid. This is fixed with _cycle breaking_. Once in a while, DSGC will look through all the allocated blocks, detect cycles, and break them so the memory be freed.
 
+## Features
+
+* Written in less than 200 lines of C code!
+* Doesn't care about what's on the stack!
+* Cares only a little about what's on the heap!
+* Automatically breaks reference cycles!
+* The most important part: Iterators!
+
 ## Details
 
 DSGC isn't fast. It isn't efficent. Fast and efficent garbage collectors are big and hard to write. Put this in production code only if you want long, slow garbage collection times.
