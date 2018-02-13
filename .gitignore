@@ -1,0 +1,12 @@
+# build outputs
+*.o
+*.a
+*.so
+*.dll
+*.exe
+a.out
+
+# eclipse junk
+/.cproject
+/.project
+/.settings/
